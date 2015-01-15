@@ -107,7 +107,7 @@ class RTFGroup {
     public function pushContent(RTFToken $token) {
         $type = $token->getType();
         if ($type != RTFToken::T_CONTROL_SYMBOL && $type != RTFToken::T_TEXT) {
-            throw new Exception("Content must be either T_CONTROL_SYMBOL or T_TEXT");
+            throw new \Exception("Content must be either T_CONTROL_SYMBOL or T_TEXT");
         }
 
         array_push($this->content, $token);
@@ -116,7 +116,7 @@ class RTFGroup {
 
     public function pushControlWord(RTFToken $token) {
         if ($token->getType() != RTFToken::T_CONTROL_WORD) {
-            throw new Exception("Incorrect token type");
+            throw new \Exception("Incorrect token type");
         }
 
         array_push($this->controls, $token);
