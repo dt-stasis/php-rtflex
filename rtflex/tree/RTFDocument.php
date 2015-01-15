@@ -29,6 +29,10 @@ class RTFDocument {
 
 
     public function extractText() {
+        if(!$this->rootGroup) {
+            return null;
+        }
+
         return $this->rootGroup->extractText();
     }
 
